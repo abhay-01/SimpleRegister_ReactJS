@@ -25,11 +25,27 @@ class App extends Component {
     this.setState({name,email,password,isRegister:true});
     event.preventDefault();
   };
+
+
+  showPasswordHandeler = () =>{
+    console.log(this.state);
+
+    this.setState({showPass: !this.state.showPass},() =>{
+      console.log(this.state);
+
+    })
+      
+    }
+  
+
   render() {
     return (
       <div>
 
-        {this.state.isRegister?(<Greet name = {this.state.name} email = {this.state.email} password = {this.state.password}></Greet> ): (<Register submit = {this.registerHandle} showPass = {this.click}></Register>)}
+        {this.state.isRegister?(<Greet name = {this.state.name} email = {this.state.email} password = {this.state.password}></Greet> ): (<Register 
+        submit = {this.registerHandle} 
+        showPass = {this.click}
+        click ={this.showPasswordHandeler}></Register>)}
 
       </div>
     )

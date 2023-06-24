@@ -32,7 +32,7 @@ function Register(props) {
                 className='btn m-1' 
                 style = {btnStyle} 
                 onClick = {props.showPss}
-                click ={this.showPasswordHandeler}>Show Password</button>
+                >Show Password</button>
             </form>
         </div>
     </div>
