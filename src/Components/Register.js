@@ -2,21 +2,24 @@ import React from 'react'
 
 function Register(props) {
 
-  const btnStyle ={
-    backgroundColor: "green",
-    color: "white",
-  }
+  // const btnStyle ={
+  //   backgroundColor: "green",
+  //   color: "white",
+  // }
 
+  let btnClasses = ["btn", "m-2"]  //Dynamic CSS
   let btnText, passText;
   if(props.showPass === true){
-    btnStyle.backgroundColor = "red" 
-    btnStyle.color = "white"
+    // btnStyle.backgroundColor = "red" 
+    // btnStyle.color = "white"
     btnText = "Hide Password"
     passText = "text"
+    btnClasses.push("btn-danger")   //push in arr
     
   }else{
     btnText = "Show Password"
     passText = "password"
+    btnClasses.push("btn-success")  //push in arr
   }
 
   return (
@@ -41,8 +44,8 @@ function Register(props) {
 
                 <button type="submit" className='btn btn-primary'>Register</button>
                 <button type = "button" 
-                className='btn m-1' 
-                style = {btnStyle} 
+                className= {btnClasses.join(" ")}
+                // style = {btnStyle} 
                 onClick = {props.click}
                 >{btnText}</button>
             </form>
