@@ -7,9 +7,16 @@ function Register(props) {
     color: "white",
   }
 
+  let btnText, passText;
   if(props.showPass === true){
     btnStyle.backgroundColor = "red" 
     btnStyle.color = "white"
+    btnText = "Hide Password"
+    passText = "text"
+    
+  }else{
+    btnText = "Show Password"
+    passText = "password"
   }
 
   return (
@@ -29,17 +36,17 @@ function Register(props) {
 
                 <div className= "form-group">
                 <label htmlFor = "Pass">Password:</label>
-                <input type = "password" name = "password" required className='form-control'/>
+                <input type = {passText} name = "password" required className='form-control'/>
                 </div>
 
                 <button type="submit" className='btn btn-primary'>Register</button>
                 <button type = "button" 
                 className='btn m-1' 
                 style = {btnStyle} 
-                onClick = {props.showPass}
-                >Show Password</button>
+                onClick = {props.click}
+                >{btnText}</button>
             </form>
-        </div>
+        </div> 
   )
 }
 
