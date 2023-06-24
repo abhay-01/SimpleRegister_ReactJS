@@ -6,9 +6,14 @@ function Register(props) {
     backgroundColor: "green",
     color: "white",
   }
-  return (
-    <div className = "prim-div">
 
+  if(props.showPass === true){
+    btnStyle.backgroundColor = "red" 
+    btnStyle.color = "white"
+  }
+
+  return (
+    
         <div className = "container card p-3 mt-2 register-container">
             <form onSubmit={props.submit}>
                 <h1 className='text-center'> Registration Form</h1>
@@ -31,11 +36,10 @@ function Register(props) {
                 <button type = "button" 
                 className='btn m-1' 
                 style = {btnStyle} 
-                onClick = {props.showPss}
+                onClick = {props.showPass}
                 >Show Password</button>
             </form>
         </div>
-    </div>
   )
 }
 
